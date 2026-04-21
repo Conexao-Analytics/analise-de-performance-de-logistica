@@ -63,7 +63,6 @@ O projeto segue as seguintes etapas:
 | Nome | Função no Projeto |
 |-----|-----|
 | Vanessa | Product Owner |
-| Francielle| Scrum Master |
+| Francielle| Analista de BI  |
 | Tatiana | Engenheira de Dados|
 | Ingrid | Analista de Dados |
-| Pâmella | Analista de BI  |
