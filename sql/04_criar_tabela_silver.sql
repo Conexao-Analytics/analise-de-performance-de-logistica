@@ -1,4 +1,6 @@
 
+DROP TABLE IF EXISTS silver.entregas_clean;
+
 -- =====================
 -- CRIAR TABELA SILVER
 -- =====================
@@ -29,10 +31,37 @@ SELECT
 FROM raw.deliveries
 WHERE 
     shipment_id IS NOT NULL
-    AND shipment_date IS NOT NULL
-    AND delivery_date IS NOT NULL
+
+    -- Remove registros onde delivery_date e cost são nulos ao mesmo tempo
+    AND NOT (
+        delivery_date IS NULL
+        AND cost IS NULL
+    )
+
+    -- Permite cost nulo, mas não valores negativos
+    AND (
+        cost >= 0
+        OR cost IS NULL
+    )
+
+    -- Transportadora obrigatória
     AND carrier IS NOT NULL
-    AND delivery_date >= shipment_date
-    AND weight_kg >= 0
-    AND cost >= 0
-    AND distance_miles >= 0;
+
+    -- Permite datas nulas, mas remove datas invertidas
+    AND (
+        delivery_date >= shipment_date
+        OR delivery_date IS NULL
+        OR shipment_date IS NULL
+    )
+
+    -- Permite peso nulo, mas não negativo
+    AND (
+        weight_kg >= 0
+        OR weight_kg IS NULL
+    )
+
+    -- Permite distância nula, mas não negativa
+    AND (
+        distance_miles >= 0
+        OR distance_miles IS NULL
+    );
