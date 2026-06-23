@@ -48,13 +48,26 @@ O projeto segue as seguintes etapas:
 
 ## Análise Exploratória dos Dados (EDA)
 
+A análise exploratória teve como objetivo compreender o comportamento da operação logística, identificar padrões de atraso e avaliar a eficiência dos custos de transporte.
+
+As principais etapas realizadas foram:
+
+- Análise descritiva das variáveis de custo, peso, distância e tempo de trânsito;
+- Criação de uma nova regra de negócio para classificação de atrasos baseada no histórico de cada rota;
+- Avaliação da evolução temporal das entregas e da taxa de atraso;
+- Comparação do desempenho entre transportadoras;
+- Identificação das rotas com maiores taxas de atraso;
+- Análise dos custos por quilômetro e por quilograma transportado;
+- Aplicação do Wilson Score para aumentar a confiabilidade das comparações entre rotas e transportadoras;
+- Consolidação dos principais insights e recomendações para a operação.
+
+Os resultados da EDA serviram como base para a construção dos indicadores de desempenho (KPIs) e para o desenvolvimento do dashboard analítico.
+
+## Dashboard
+
 *Em desenvolvimento*
 
 ## Principais Insights
-
-*Em desenvolvimento*
-
-## Dashboard
 
 *Em desenvolvimento*
 
